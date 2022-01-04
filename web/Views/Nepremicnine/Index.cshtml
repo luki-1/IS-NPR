@@ -1,0 +1,41 @@
+@model IEnumerable<web.Models.Nepremicnina>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Nepremicnine</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naslov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AgentID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naslov)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AgentID)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

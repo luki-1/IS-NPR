@@ -1,0 +1,55 @@
+@model IEnumerable<web.Models.Oglas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NepremicninaID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.datum)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NepremicninaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datum)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

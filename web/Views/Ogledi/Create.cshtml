@@ -1,0 +1,54 @@
+@model web.Models.Ogled
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Ogled</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="agentID" class="control-label"></label>
+                <input asp-for="agentID" class="form-control" />
+                <span asp-validation-for="agentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="strankaID" class="control-label"></label>
+                <input asp-for="strankaID" class="form-control" />
+                <span asp-validation-for="strankaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datum" class="control-label"></label>
+                <input asp-for="datum" class="form-control" />
+                <span asp-validation-for="datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nepremicninaID" class="control-label"></label>
+                <input asp-for="nepremicninaID" class="form-control" />
+                <span asp-validation-for="nepremicninaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>

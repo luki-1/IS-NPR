@@ -1,0 +1,49 @@
+@model web.Models.Oglas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+
+<h4>Oglas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NepremicninaID" class="control-label"></label>
+                <input asp-for="NepremicninaID" class="form-control" />
+                <span asp-validation-for="NepremicninaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cena" class="control-label"></label>
+                <input asp-for="cena" class="form-control" />
+                <span asp-validation-for="cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datum" class="control-label"></label>
+                <input asp-for="datum" class="form-control" />
+                <span asp-validation-for="datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</body>
+</html>
